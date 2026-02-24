@@ -14,7 +14,7 @@ IPAddress gateway(192, 1, 1, 1);
 IPAddress subnet(255, 255, 255, 0);
 EthernetClient client;
 DHT dht(6, DHT22);
-char server[] = " ";  // Bağlanılacak Sitenin URL si
+char server[] = "example.com";  // Bağlanılacak Sitenin URL si
 int LDRSensor = 4;
 int value = 0;
 unsigned long smsEskiZaman = 0, voltEskiZaman = 0, volt2EskiZaman = 0;
@@ -151,7 +151,7 @@ void smsRequest(String smsVeri) {
     // HTTP GET Request Gönderiliyor..
 
     client.println("GET /PATH" + smsVeri + " HTTP/1.1");
-    client.println("Host: "); //Site URL
+    client.println("Host: example.com"); //Site URL
     client.println("Connection: keep-alive");
     client.println();
   } else {
