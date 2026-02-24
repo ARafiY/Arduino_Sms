@@ -82,6 +82,10 @@ void loop() {
   }
 
   float sicaklik = dht.readTemperature(); //Sıcaklığı Ölçüyor
+if (isnan(sicaklik)) {
+    Serial.println("Sıcaklık okunamadı!");
+    return; // veya hata durumunu yönet
+}
 
   int voltageDurum = digitalRead(LDRSensor);
   // Serial.println(voltageDurum);
